@@ -5,7 +5,7 @@ Web based project inspired to provide e-kirana platform for vendors using react 
 
 
 
-## Contributors ##
+## Authors ##
 
 Dibyarupa Jena  <dibyarupajena@gmail.com>
 
