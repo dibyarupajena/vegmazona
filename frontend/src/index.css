@@ -174,7 +174,7 @@ a:hover{
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;                  /*?because in small screen we need to push things into new lines*/
-  padding: 1rem;
+  /*!padding: 1%;*/
 }
 .details-image {
   flex: 2 1 60rem;
@@ -217,12 +217,11 @@ a:hover{
   border: .1rem #808080 solid;
   border-radius: 0.5rem;
   cursor: pointer;
-  background-color: rgb(243, 185, 59);            /*! Check why color of button not working; add to cart */    
-
+  background-color: rgb(243, 185, 59);            /*! Check why color of button not working; add to cart in primary*/    
 }
 .button:hover{
   border: .1rem #404040 solid;
 }
 .button.primary{
-  background-color: rgb(243, 185, 59);            /*! Check why color of button not working; add to cart */    
+  background-color: rgb(243, 185, 59);            /*! Check why color of button not working; add to cart in primary */    
 }
