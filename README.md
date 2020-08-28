@@ -90,5 +90,40 @@ Dibyarupa Jena  <dibyarupajena@gmail.com>
     - the ul component of product is cut pasted into homescreen.js and import as done
 
 11. Linking done
-    - Instead of <a href> tags search directs through changed url id on click
-    - ```  <Link to={'/product/' + product._id}> ``` - for eg- localhost3000/product/2472    
+    - Instead of < a href > tags search directs through changed url id on click
+    - ```  <Link to={'/product/' + product._id}>``` 
+     for eg- localhost3000/product/2472/    
+
+12. Product details
+    - In the product screen in the console log the product id of the product that got clicked is fetched. Line 6
+    - Const named product is defined which fetches and stores the require product object from data by matching the product id with console id.
+    - using dot operator, various needed details are fetched into page like {product.name}, {product.image} etc.
+    - Styling the divs
+        -in index.css in product details
+    - third div, details-action
+    - frontend completed, next is backend
+
+(BANKEND STARTS)
+
+13. Creating node server(backend)
+    - Create a backend folder inside amazona(main folder)
+    - create new file server.js inside backend folder
+    - to create a node application inside amazona folder, inside terminal, amazona folder
+    ```npm init```
+    - Enter yes for the prompts followed and at the end you have package.json
+
+14. Serving list of products to the client
+    - Inside server.js
+    - to create web server, going to use express(simple server) module, hence the import
+    - hence in the terminal, ``` npm install express ```   
+    - to create a endpoint, path app.get line 8
+        - 2nd parameter of get is a handler function which responds to this request
+        - for data.products, we use from data.js
+    - copy data.js from src to backend folder       
+    - app.listen command to run the server
+    - then in terminal, have to type node address of server; in this case ``` node backend/server.js ```
+    - error occurs, need to install some packages
+    - ```npm install @babel/cli @babel/core @babel/node @babel/preset-env nodemon --save-dev ``` (save dev will   save the packages in developer section of package.json)
+    - created file .babelrc under amazona, written inside it
+    - inside package.json under amazona, edited under script,(also type, and data.js error)
+    - then ``` npm start ```, runs in the mention host 5000; localhost:5000/api/products is our backend api
