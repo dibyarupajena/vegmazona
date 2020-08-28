@@ -103,7 +103,7 @@ Dibyarupa Jena  <dibyarupajena@gmail.com>
     - third div, details-action
     - frontend completed, next is backend
 
-(BANKEND STARTS)
+(BACKEND STARTS)
 
 13. Creating node server(backend)
     - Create a backend folder inside amazona(main folder)
