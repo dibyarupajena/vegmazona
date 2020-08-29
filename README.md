@@ -123,7 +123,19 @@ Dibyarupa Jena  <dibyarupajena@gmail.com>
     - app.listen command to run the server
     - then in terminal, have to type node address of server; in this case ``` node backend/server.js ```
     - error occurs, need to install some packages
-    - ```npm install @babel/cli @babel/core @babel/node @babel/preset-env nodemon --save-dev ``` (save dev will   save the packages in developer section of package.json)
+    - ```npm install @babel/cli @babel/core @babel/node @babel/preset-env nodemon --save-dev ``` (save dev will   save the packages in developer section of package.json, nodemon helps us start or stop the server whenever there is a change in the code)
     - created file .babelrc under amazona, written inside it
     - inside package.json under amazona, edited under script,(also type, and data.js error)
     - then ``` npm start ```, runs in the mention host 5000; localhost:5000/api/products is our backend api
+
+15. Fetching data from server
+    - first in amazona, ``` npm start ``` to run the backend then open another terminal, ```cd frontend ``` and ``` npm start``` to start the frontend
+    - inside package.json, write the proxy part(port no of your node)  
+    - next to fetch data, using hooks
+        - Go to homescreen/screens/frontend
+        - inside homescreen function(check the imports too), use state and use effect(no cleanup; empty inputs because when all the lines down for products is rendered then only it will run)
+    - then install axios package
+        - new terminal, ``` cd frontend ```
+        - ``` npm install axios ```
+        - import axios     
+    - no more need of import, no need of data.js file in frontend
