@@ -10,7 +10,7 @@ Web based project inspired to provide e-kirana platform for vendors using react 
 Dibyarupa Jena  <dibyarupajena@gmail.com>
 
 
-### Documentation ###
+### Self-reference ###
 
 1. Created an index.html of three areas
 
@@ -139,3 +139,14 @@ Dibyarupa Jena  <dibyarupajena@gmail.com>
         - ``` npm install axios ```
         - import axios     
     - no more need of import, no need of data.js file in frontend
+
+16. Manage state redux(redux as state manager, to expanding to higher state)
+    - good diagram for reference in the video for redux, with parts; ```npm install react-redux```
+        1. create store 
+            - creating store.js inside frontend. src
+        2. reducers
+            - create a folder under src named reducers
+            - inside it a file productReducers.js and write ..  
+            - next made changes to store.js
+            - next made changes to index.js
+            - thunk; in store.js ;  ```npm install redux-thunk```

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState, useEffect } from './node_modules/react';
+import { Link } from './node_modules/react-router-dom';
+import axios from './node_modules/axios';
 
 
 function HomeScreen(props) {
