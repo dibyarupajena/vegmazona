@@ -149,4 +149,4 @@ Dibyarupa Jena  <dibyarupajena@gmail.com>
             - inside it a file productReducers.js and write ..  
             - next made changes to store.js
             - next made changes to index.js
-            - thunk; in store.js ;  ```npm install redux-thunk```
+            - thunk; in store.js ;  ```npm install redux-thunk``` // ```npm install redux --save``` to solve error 

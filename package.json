@@ -5,7 +5,8 @@
   "description": "Web based project inspired to provide e-kirana platform for vendors using react and node.js",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch backend --exec babel-node backend/server.js"
+    "start": "nodemon --watch backend --exec babel-node backend/server.js",
+    "build": "echo 'build script executed'"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,9 @@
   },
   "homepage": "https://github.com/dibyarupajena/vegmazona#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "redux-devtools-extension": "^2.13.8"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
