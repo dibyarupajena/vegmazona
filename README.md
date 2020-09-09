@@ -150,3 +150,15 @@ Dibyarupa Jena  <dibyarupajena@gmail.com>
             - next made changes to store.js
             - next made changes to index.js
             - thunk; in store.js ;  ```npm install redux-thunk``` // ```npm install redux --save``` to solve error 
+
+         
+
+        3. Error, loading page
+            - npm installed after deleting many times node modules and package-lock.json file
+            - Error resolved when imports in HomeScreen.js and ProductScreen.js when converted (for eg) './  node_modules/react' to 'react'
+        4. Instead of getting data using useState, will now use/define useSelector    
+            - const dispatch, and functions, deleting fetchdata, imports
+            - inside src, create folder named actions, inside which- file productActions.js
+            - Write inside productActions for const defining listProducts
+            - In the console log, in network, in xhr can see products- coming from server
+            - REDUX helpful to manage complex states in our applications
