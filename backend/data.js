@@ -8,7 +8,8 @@ export default {
         price: 25,
         brand: 'Reliance',
         rating: 3.0,
-        numReviews: 6
+        numReviews: 6,
+        countInStock: 6
         
     },
     {
@@ -19,7 +20,8 @@ export default {
         price: 40,
         brand: 'Reliance',
         rating: 3.5,
-        numReviews: 9
+        numReviews: 9,
+        countInStock: 0
     },
     {
         _id:'3',
@@ -29,7 +31,8 @@ export default {
         price: 20,
         brand: 'Reliance',
         rating: 4.0,
-        numReviews: 7
+        numReviews: 7,
+        countInStock: 5
     },
     {
         _id:'4',
@@ -39,6 +42,7 @@ export default {
         price: 60,
         brand: 'Reliance',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6
     }]
 }

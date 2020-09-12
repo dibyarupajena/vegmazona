@@ -1,16 +1,16 @@
 
-# Vegmazona #
+# **Vegmazona** #
 Web based project inspired to provide e-kirana platform for vendors using react and node.js
 
 
 
 
-## Authors ##
+## **Authors** ##
 
-Dibyarupa Jena  <dibyarupajena@gmail.com>
+*Dibyarupa Jena  <dibyarupajena@gmail.com>*
 
 
-### Self-reference ###
+## **Self-reference** ##
 
 1. Created an index.html of three areas
 
@@ -103,7 +103,7 @@ Dibyarupa Jena  <dibyarupajena@gmail.com>
     - third div, details-action
     - frontend completed, next is backend
 
-(BACKEND STARTS)
+## (BACKEND STARTS) ##
 
 13. Creating node server(backend)
     - Create a backend folder inside amazona(main folder)
@@ -119,7 +119,7 @@ Dibyarupa Jena  <dibyarupajena@gmail.com>
     - to create a endpoint, path app.get line 8
         - 2nd parameter of get is a handler function which responds to this request
         - for data.products, we use from data.js
-    - copy data.js from src to backend folder       
+    - *copy data.js from src to backend folder*       
     - app.listen command to run the server
     - then in terminal, have to type node address of server; in this case ``` node backend/server.js ```
     - error occurs, need to install some packages
@@ -160,5 +160,37 @@ Dibyarupa Jena  <dibyarupajena@gmail.com>
             - const dispatch, and functions, deleting fetchdata, imports
             - inside src, create folder named actions, inside which- file productActions.js
             - Write inside productActions for const defining listProducts
+            - Loading error above the div, with if else, error or result
             - In the console log, in network, in xhr can see products- coming from server
             - REDUX helpful to manage complex states in our applications
+
+17. Adding redux(state management system) to the product details page
+    - again define variable(productDetails) using useSelectors
+    - again also use dispatch{ dispatch(action_name())}- used as an effect
+    - In ProductScreen.js, after the div with classname= backtoresults, put loading? error? inside which cut, paste the divs details
+    -useSelector, useDispatch in ProductScreen.js, HomeScreen.js
+    - now we need to define a web api under server.js to server the address inside actions when user enters product api and productid
+    - enriching the endpoint api
+    - **whatever done with product list(changing useState to useEffects{HomeScreen.js, ProductScreen.js}, api call{productActions, async, await, dispatch api address}, constants{productConstants.js}, reducers{productReducers.js}, combine reducers{store.js}) need to be done for product details**
+    - In productScreen, inside dispatch, need to put the productId that user enters so => dispatch(detailsProduct(props.match.params.id))
+    - now product details has been added to redux, you are see when false in redux, a small loadin... comes
+
+18. Implementing add to cart 
+    - Managing qty(quantity)
+        - Inside productscreen, define a hook for qty for grabbing qty entered by the user, then changes in qty ul to store value of what user clicks in {qty} using onChange handler
+        - countInStock= qty need to come from server/ instead of static options
+    - Add to cart
+        - inside productscreen.js, created handleaddtocart function, which will redirect user to cart, 
+        - mentioning url to be directed inside it => props.history.push("/cart/" + props.match.params.id + "?qty=" + qty)
+        - then in button add to cart button, put this function on click.. (add to {cart}, the product of this {productId}, {qty} no of times)
+
+19.Shopping cart screen
+    - In app.js, add the route path for cart under div class content
+    - create CartScreen.js under screens
+        - inside cartscreen function const qty = props.location.search? Number(props.location.search.split("=")[1]):1; /* to search for the qty in the url, converting the string into num, spliting the string at = sign and choosing 1 character from the right*/
+        - can use useEffect function now
+    - create cartActions under actions
+    - create cartreducer under reducers(didnt understand the code), then changes in store.js
+    - then make cartConstants
+    - *didnt get the cart-actions* in cartScreen.js
+    - style cart, cart-list and cart-action

@@ -1,18 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
-import data from '../data';
+import { useSelector, useDispatch } from 'react-redux';
+import { detailsProduct } from '../actions/productActions';
 
 function ProductScreen(props) {
-    console.log(props.match.params.id);
-    const product = data.products.find(x => x._id === props.match.params.id);
+
+  const [qty, setQty] = useState(1);                  //defined a hook for qty for grabbing qty entered by the user
+  const productDetails = useSelector((state) => state.productDetails);
+  const { product, loading, error } = productDetails;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+      dispatch(detailsProduct(props.match.params.id));
+      return () => {
+          //
+      }
+  }, []);
+
+  const handleAddToCart = () => {
+      props.history.push("/cart/" + props.match.params.id + "?qty=" + qty)
+  }
+
     return <div>
         <div className="back-to-result">
             <Link to="/">Back to results</Link>
         </div>
-        <div className="details">
+        {loading? <div>Loadin...</div> :
+                error? <div>{error}</div> :
+                (
+                    <div className="details">
             <div className="details-image">
                 <img src={product.image} alt="product" ></img>
             </div>
+           
             <div className="details-info">
                 <ul>
                     <li>
@@ -38,22 +58,24 @@ function ProductScreen(props) {
                         Price: {product.price}
                     </li>
                     <li>
-                        Status: {product.status}
+                        Status: {product.countInStock > 0 ? 'In Stock' : 'Unavailable.'}
                     </li>
                     <li>
-                        Qty: <select>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
+                        Qty: <select value={qty} onChange={(e) => { setQty(e.target.value) }}>
+                        {[...Array(product.countInStock).keys()].map((x) => (
+                            <option key={x + 1} value={x + 1}>{x + 1}</option>
+                         ))}
                         </select>
                     </li>
                     <li>
-                        <button className="button">Add to Cart</button>
+                    {product.countInStock > 0 && (<button onClick={handleAddToCart} className="button">Add to Cart</button>)}
                     </li>
                 </ul>
             </div>
         </div>
+                )
+        }
+        
     </div>
 }
 
