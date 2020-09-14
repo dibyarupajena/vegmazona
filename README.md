@@ -209,6 +209,8 @@ Web based project inspired to provide e-kirana platform for vendors using react 
     - Upon refresh now items stay in the cart and price get updated
     - **fully functional shopping cart implemented**
 
+
+## (DataBase Starts) ##
 21. *Connecting to MongoDb* 
     - Create .env file inside amazona
     - store the url
@@ -218,3 +220,15 @@ Web based project inspired to provide e-kirana platform for vendors using react 
     - Install mongodb
     - ```npm install mongoose```
     - In server.js, import mongoose- write
+
+    ### User side, data stores ##
+    - New folder in backend models
+        - userModel.js file create in it
+        - imprt mongooose and define schema(how user will be saved in mongodb userbase)- field and data to be saved in the users' collection
+        - Create a route for users 
+            - inside backend, create a new folder routes
+            - create userRoute.js inside it
+        - Define router that are defined in userRoute in server.js
+        - import userRouter in server.js and export in userRoute.js default router
+
+22. Sign in user/ user authentication

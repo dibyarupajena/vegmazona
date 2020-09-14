@@ -1,18 +1,25 @@
 import express from 'express';
 import data from './data.js';
 import dotenv from 'dotenv';
-import config from './config';
+import config from './config.js';
 import mongoose from 'mongoose';
+import userRoute from './routes/userRoute.js';
+
 
 
 dotenv.config();                                   //calling
 
-const mongodbUrl = config.MONGODB_URL;             // get access to mongodb url      
-mongoose.connect(mongoUrl, {
-    useNewUrlParser: true
-}). catch(error => console.log(error.reason));          // connected to mongodb          
+const mongodbUrl = config.MONGODB_URL;             // get access to mongodb url   
+
+mongoose.connect(mongodbUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,                        //warning deprecation
+}).catch(error => console.log(error.reason));          // connected to mongodb          
 
 const app = express();
+
+app.use("/api/users", userRoute);
 
 app.get("/api/products/:id", (req, res) => {
 
