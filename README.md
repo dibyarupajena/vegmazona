@@ -183,9 +183,10 @@ Web based project inspired to provide e-kirana platform for vendors using react 
         - inside productscreen.js, created handleaddtocart function, which will redirect user to cart, 
         - mentioning url to be directed inside it => props.history.push("/cart/" + props.match.params.id + "?qty=" + qty)
         - then in button add to cart button, put this function on click.. (add to {cart}, the product of this {productId}, {qty} no of times)
+    
 
-19.Shopping cart screen
-    - In app.js, add the route path for cart under div class content
+19. Shopping cart screen
+    - In app.js, add the route path for cart under div class  content
     - create CartScreen.js under screens
         - inside cartscreen function const qty = props.location.search? Number(props.location.search.split("=")[1]):1; /* to search for the qty in the url, converting the string into num, spliting the string at = sign and choosing 1 character from the right*/
         - can use useEffect function now
@@ -194,3 +195,14 @@ Web based project inspired to provide e-kirana platform for vendors using react 
     - then make cartConstants
     - *didnt get the cart-actions* in cartScreen.js
     - style cart, cart-list and cart-action
+    - implemented delete action in cart
+    - implemented checkout by redirecting to sigin page
+    
+20. Cookies
+    - Upon refreshing the cart, only the last time added to cart stays, so need to add cookies
+    - need to install cookies
+        - ```cd frontend```
+        - ```npm install js-cookie```
+    - use in cartactions, starting with import cookies
+    - using getstate 
+    - then store.js

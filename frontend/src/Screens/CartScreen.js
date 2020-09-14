@@ -20,7 +20,11 @@ function CartScreen(props) {
         if(productId){
             dispatch(addToCart(productId, qty));
         }
-    }, [])
+    }, []);
+
+    const checkoutHandler = () =>{
+        props.history.push("/sigin?redirect=shipping");
+    }
 
     return <div className="cart">
         <div className="cart-list">
@@ -58,9 +62,9 @@ function CartScreen(props) {
                                         <option value="2">2</option>
                                         <option value="3">3</option>
                                     </select>
-                                    <button type="button" className="button" onClick={() => removeFromCartHandler(item.product)}>
+                                    <button type="button" className="deleteColor" onClick={() => removeFromCartHandler(item.product)}> 
                                         Delete
-                                    </button>
+                                    </button> 
                                 </div>
                             </div>
                             <div className="cart-price">
@@ -78,7 +82,7 @@ function CartScreen(props) {
                     :
                     ₹ {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
                     </h3>
-                    <button className="button primary" disabled={cartItems.lenght === 0}>
+                    <button onClick={checkoutHandler} className="button primary full-width" disabled={cartItems.lenght === 0}>
                         Proceed to Checkout
                     </button>
 
