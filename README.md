@@ -208,3 +208,13 @@ Web based project inspired to provide e-kirana platform for vendors using react 
     - then store.js
     - Upon refresh now items stay in the cart and price get updated
     - **fully functional shopping cart implemented**
+
+21. *Connecting to MongoDb* 
+    - Create .env file inside amazona
+    - store the url
+    - Install package ```npm install dotenv``` to connect to the mongodb url    
+    - Inside backend folder; create file config.js and write
+    - Go to server.js file import the two- write
+    - Install mongodb
+    - ```npm install mongoose```
+    - In server.js, import mongoose- write

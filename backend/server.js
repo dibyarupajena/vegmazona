@@ -1,5 +1,16 @@
 import express from 'express';
 import data from './data.js';
+import dotenv from 'dotenv';
+import config from './config';
+import mongoose from 'mongoose';
+
+
+dotenv.config();                                   //calling
+
+const mongodbUrl = config.MONGODB_URL;             // get access to mongodb url      
+mongoose.connect(mongoUrl, {
+    useNewUrlParser: true
+}). catch(error => console.log(error.reason));          // connected to mongodb          
 
 const app = express();
 
