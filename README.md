@@ -207,3 +207,4 @@ Web based project inspired to provide e-kirana platform for vendors using react 
     - using getstate 
     - then store.js
     - Upon refresh now items stay in the cart and price get updated
+    - **fully functional shopping cart implemented**
