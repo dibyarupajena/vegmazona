@@ -206,3 +206,4 @@ Web based project inspired to provide e-kirana platform for vendors using react 
     - use in cartactions, starting with import cookies
     - using getstate 
     - then store.js
+    - Upon refresh now items stay in the cart and price get updated
