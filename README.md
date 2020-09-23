@@ -212,6 +212,7 @@ Web based project inspired to provide e-kirana platform for vendors using react 
 
 ## (DataBase Starts) ##
 21. *Connecting to MongoDb* 
+        03/08/11
     - Create .env file inside amazona
     - store the url
     - Install package ```npm install dotenv``` to connect to the mongodb url    
@@ -221,7 +222,7 @@ Web based project inspired to provide e-kirana platform for vendors using react 
     - ```npm install mongoose```
     - In server.js, import mongoose- write
 
-    ### User side, data stores ##
+    ### User side, data stores ###
     - New folder in backend models
         - userModel.js file create in it
         - imprt mongooose and define schema(how user will be saved in mongodb userbase)- field and data to be saved in the users' collection
@@ -232,3 +233,18 @@ Web based project inspired to provide e-kirana platform for vendors using react 
         - import userRouter in server.js and export in userRoute.js default router
 
 22. Sign in user/ user authentication
+        03/21/37
+    - First the backend, inside routes, inside userRoute(create a route for signin), http handler .post is used
+    - Inside it, send a query to the database,(check the email, password etc)
+    - If and else condition to check if the entered credentials are valid or not
+    - If true, send the details to client, also
+    - sending a token if the http request is authenticated or not.
+    - next, ``` npm install jsonwebtoken ```
+    - Inside the backend folder, create a file util.js- write
+        -define const getToken and define user as a parameter, inside jwt.sign..first one is a payload and second one is to encrpt payload
+    - Write under env file, JWT_SECRET
+    - write under config.js
+    - inside frontend, created SigninScreen.js inside screens
+        - copy, pasted from productScreen, write some changes
+        - //committed to have the basic template from where to start
+    - define a route for signin in app.js    
