@@ -256,3 +256,9 @@ Web based project inspired to provide e-kirana platform for vendors using react 
     - now again time for reducers, under it, userReducers.js
     - next, ```npm install body-parser```
     - body parser is middleware for express that provide data that the user enter post request to your node application
+
+23. User register
+    - Inside screens, new file, RegisterScreen.js
+    - copy, paste the SigninScreen.js... do the same for actions, constants and reducers, app.js, store.js
+    - then need to provide a backend for it
+        - go to userRoute.js and write
