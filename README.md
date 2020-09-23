@@ -226,7 +226,7 @@ Web based project inspired to provide e-kirana platform for vendors using react 
     - New folder in backend models
         - userModel.js file create in it
         - imprt mongooose and define schema(how user will be saved in mongodb userbase)- field and data to be saved in the users' collection
-        - Create a route for users 
+        - * Create a route for users *
             - inside backend, create a new folder routes
             - create userRoute.js inside it
         - Define router that are defined in userRoute in server.js
@@ -247,4 +247,12 @@ Web based project inspired to provide e-kirana platform for vendors using react 
     - inside frontend, created SigninScreen.js inside screens
         - copy, pasted from productScreen, write some changes
         - //committed to have the basic template from where to start
+        - in the return will create a form<html>
+        - styling for forms
+        - submit Handler runs when user clicks on sign in, which records the email and password
     - define a route for signin in app.js    
+    - Now create user action file under actions and write
+    - Under constants folder create userConstants.js
+    - now again time for reducers, under it, userReducers.js
+    - next, ```npm install body-parser```
+    - body parser is middleware for express that provide data that the user enter post request to your node application

@@ -3,6 +3,7 @@ import data from './data.js';
 import dotenv from 'dotenv';
 import config from './config.js';
 import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
 import userRoute from './routes/userRoute.js';
 
 
@@ -19,6 +20,7 @@ mongoose.connect(mongodbUrl, {
 
 const app = express();
 
+app.use(bodyParser.json());                         //by having this I m able to read data
 app.use("/api/users", userRoute);
 
 app.get("/api/products/:id", (req, res) => {

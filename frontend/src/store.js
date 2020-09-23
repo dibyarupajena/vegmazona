@@ -3,15 +3,17 @@ import thunk from 'redux-thunk';
 import Cookie from 'js-cookie';
 import { productListReducer, productDetailsReducer } from './reducers/productReducers';
 import { cartReducer } from './reducers/cartReducers';
+import { userSigninReducer } from './reducers/userReducers';
 
-const cartItems = Cookie.getJSON("cartItems") || [];                       // to get access to the cookie
+const cartItems = Cookie.getJSON("cartItems") || [];   
+const userInfo = Cookie.getJSON("userInfo") || null;                    // to get access to the cookie
 
-const initialState= { cart: { cartItems } };                      // and if there is no cookie, I put the cartItems inside like this     
+const initialState= { cart: { cartItems }, userSignin: { userInfo } };                      // and if there is no cookie, I put the cartItems inside like this     
 const reducer = combineReducers({
     productList: productListReducer,
     productDetails: productDetailsReducer,
     cart: cartReducer,
-
+    userSignin: userSigninReducer
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
