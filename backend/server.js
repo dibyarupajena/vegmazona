@@ -5,6 +5,7 @@ import config from './config.js';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import userRoute from './routes/userRoute.js';
+import productRoute from './routes/productRoute.js';
 
 
 
@@ -22,20 +23,22 @@ const app = express();
 
 app.use(bodyParser.json());                         //by having this I m able to read data
 app.use("/api/users", userRoute);
+app.use("/api/products", productRoute);
 
-app.get("/api/products/:id", (req, res) => {
+//no need of static api because we are going to implement them from the database
+// app.get("/api/products/:id", (req, res) => {
 
-    const productId = req.params.id;
-    const product = data.products.find(x=>x._id === productId);
-    if(product)
-        res.send(product);
-    else
-        res.status(404).send({msg: "Product Not Found."}) //enriching endpoint api
-});
+//     const productId = req.params.id;
+//     const product = data.products.find(x=>x._id === productId);
+//     if(product)
+//         res.send(product);
+//     else
+//         res.status(404).send({msg: "Product Not Found."}) //enriching endpoint api
+// });
 
-app.get("/api/products", (req, res) => {
+// app.get("/api/products", (req, res) => {
 
-    res.send(data.products);
-});
+//     res.send(data.products);
+// });
 
 app.listen(5000, () => {console.log("Server started at http://localhost:5000") })

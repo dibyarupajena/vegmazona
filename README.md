@@ -262,3 +262,17 @@ Web based project inspired to provide e-kirana platform for vendors using react 
     - copy, paste the SigninScreen.js... do the same for actions, constants and reducers, app.js, store.js
     - then need to provide a backend for it
         - go to userRoute.js and write
+        - import
+    - implemented register screen
+
+24. Manage Products
+    03:56:04
+    - in util, two methods created to authenticate users and admin(token)
+        - isauthentication
+        - isadmin
+    - now inside models, duplicate userModel and rename as productModel- write
+    - inside screens, duplicate siginscreen and rename productsscreen- write
+    - productReducers duplicate product details-write
+    - in the store, import this reducer write
+    - inside app.js create a route for products
+    - in server.js, write the api(by product meanet the saving and putting up of products by admin)
