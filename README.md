@@ -276,3 +276,8 @@ Web based project inspired to provide e-kirana platform for vendors using react 
     - in the store, import this reducer write
     - inside app.js create a route for products
     - in server.js, write the api(by product meanet the saving and putting up of products by admin)
+    ...
+
+25. Checkout wizard
+    04:38:44
+    - open original code ...

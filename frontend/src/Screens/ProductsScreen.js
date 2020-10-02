@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { signin } from '../actions/userActions';
-import { listProducts, saveProduct } from '../actions/productActions';
+import { listProducts, saveProduct, deleteProduct } from '../actions/productActions';
+
 
 function ProductsScreen(props) {
 
@@ -19,16 +20,22 @@ function ProductsScreen(props) {
   const { loading, products, error} = productList;
   const productSave = useSelector((state) => state.productSave);
   const { loading: loadingSave, success: successSave, error: errorSave } = productSave;
+  
+  const productDelete = useSelector((state) => state.productDelete);
+  const { loading: loadingDelete, success: successDelete, error: errorDelete } = productDelete;
   const dispatch = useDispatch();
 
 
 
   useEffect(() => {
+    if (successSave) {
+      setModalVisible(false);
+    }
       dispatch(listProducts());                                                           
       return () => {
           //
       }
-  }, []);
+  }, [successSave, successDelete]);
 
   const openModal = (product) => {
     setModalVisible(true);
@@ -49,6 +56,10 @@ function ProductsScreen(props) {
       name, price, image, brand, category, 
       countInStock, description
     }));
+  }
+
+  const deleteHandler = (product) => {
+    dispatch(deleteProduct(product._id));
   }
 
   return (
@@ -168,12 +179,8 @@ function ProductsScreen(props) {
                 <td>{product.category}</td>
                 <td>{product.brand}</td>
                 <td>
-                  <button onClick={() => openModal({product})}>
-                    Edit
-                  </button>
-                  <button>
-                    Delete
-                  </button>
+                  <button onClick={() => openModal({product})}> Edit </button>
+                  <button onClick={() => deleteHandler(product)}> Delete</button>
                 </td>
               </tr>
             ))}
